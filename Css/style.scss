@@ -1,0 +1,255 @@
+$Lightred: hsl(0, 100%, 67%);
+$Orangeyellow: hsl(39, 100%, 56%);
+$Greenteal: hsl(166, 100%, 37%);
+$Cobaltblue: hsl(234, 85%, 45%);
+
+
+$White: hsl(0, 0%, 100%);
+$Paleblue: hsl(221, 100%, 96%);
+$Lightlavender: hsl(241, 100%, 89%);
+$Darkgrayblue: hsl(224, 30%, 27%);
+
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;500;700;800&display=swap');
+
+
+@mixin allcenter($direction){
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    background-color: $White;
+    @include allcenter(column);
+    
+}
+
+
+.container{
+    width: min(735px, 90%);
+    height: 510px;
+    border-radius: 30px;
+    box-shadow: 12px 12px 40px rgba(4, 21, 116, 0.08);  
+    @include allcenter(row);
+}
+
+.resultArea{
+    width: 50%;
+    height: 100%;
+    border-radius: 30px;
+    background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+    @include allcenter(column);
+    justify-content: space-between;
+    padding: 45px;
+    color: white;
+    text-align: center;
+
+      h1{
+        opacity: 0.5;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+}
+
+
+.score{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    @include allcenter(column);
+    background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 0.95;
+
+    span{
+        font-size: 20px;
+        font-weight: 500;
+        opacity: 0.8;
+    }
+    
+}
+
+.resultDetails{
+
+
+    h1{
+         font-size: 1.9rem;
+         margin-bottom: 15px;
+         opacity: 1;
+    }
+    p{
+        font-size: 1.2rem;
+        font-weight: 300;
+        line-height: 1.3;
+        opacity: 0.8;
+    }
+}
+
+.summeryArea{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+    color: $Darkgrayblue;
+
+    button{
+        width: 100%;
+        height: 60px;
+        border-radius: 60px;
+        background-color: $Darkgrayblue;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        
+
+        &:hover{
+            background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+            
+        }
+    }
+
+}
+
+.maskboxContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.marksBox{
+    @include allcenter(row);
+    justify-content: space-between;
+    padding: 0px 15px;
+    height: 55px;
+    width: 100%;
+    border-radius: 10px;
+    
+
+    .icons{
+        @include allcenter(row);
+
+        img{
+            margin-right: 8px;
+        }
+    }
+}
+
+.icons{
+    font-weight: 900;
+}
+.marks{
+    color: $Darkgrayblue;
+
+    span{
+        font-weight: 900;
+    }
+}
+
+.rec{
+    
+    background-color: hsla(0, 100%, 67%, 0.05);
+    color:  $Lightred;
+}
+.mem{
+    background-color: hsla(39, 100%, 56%, 0.05);
+    color:  $Orangeyellow;
+}
+.ver{
+    background-color: hsla(166, 100%, 37%, 0.05);
+    color:  $Greenteal;
+}
+.vis{
+    background-color: hsla(234, 85%, 45%, 0.05);
+    color:  $Cobaltblue;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    main{
+                
+        background-color: $White;
+        @include allcenter(column);
+        justify-content: flex-start;
+        
+    }
+ 
+    .container{
+        width: 100%;
+        height: 100%;        
+        border-radius: 0;
+        box-shadow: 12px 12px 40px rgba(4, 21, 116, 0.08);  
+        @include allcenter(column);
+        
+    }
+    
+    .resultArea{
+        width: 100%;
+        height: 48%;
+        padding: 30px 60px;
+        border-radius: 0 0 30px 30px;
+
+        h1{
+            font-size: 1em;
+        }
+        
+    }
+    .score{
+        height: 135px;
+        width: 135px;
+        font-size: 50px;
+        line-height: 1.4;
+
+    span{
+        font-size: 17px;
+        font-weight: 500;
+        opacity: 0.8;
+    }
+    }
+
+    .resultDetails{
+
+    h1{
+         font-size: 1.6rem;
+         margin-bottom: 15px;
+         opacity: 1;
+    }
+    p{
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.3;
+        opacity: 0.8;
+    }
+}
+
+    .summeryArea{
+        width: 100%;
+        height: 60%;
+        padding: 30px;
+
+        h2{
+            font-size: 1.2em;
+        }
+    }
+}
